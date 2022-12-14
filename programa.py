@@ -5,7 +5,7 @@ menu = "1) Introdueix una frase" + "\n" + "2) Elimina les vocals" + "\n" + \
 frase = ""
 while True:
     opc = input("Opcio: ")
-    if not opc.isdigit() and not int(opc) in range(1,6):
+    if not opc.isdigit() or not int(opc) in range(1,6):
         print("Opcio incorrecta\n")
     else:
         opc = int(opc)
@@ -39,7 +39,9 @@ while True:
             print()
 
         elif opc == 4 and frase != "":
-            print(frase[-1:0:-1])
+            for letra in range(len(frase) - 1, -1, -1):
+                resultado += frase[letra]
+            print(resultado)
 
         elif opc == 4 and frase == "":
             print("Primer has d'introduir la frase per utilitzar aquesta opció.\n")
