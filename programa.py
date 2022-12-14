@@ -8,3 +8,28 @@ while True:
         print("Opcio incorrecta\n")
     else:
         opc = int(opc)
+        resultado = ""
+        opc = int(opc)
+        if opc == 1:
+            while frase == "":
+                frase = input("Introdueix una frase:\n")
+                if frase == "":
+                    print("La frase no pot ser buida")
+
+        elif opc == 2 and frase != "":
+            vocales = "aeiou"
+            for letra in range(len(frase)):
+                if not frase[letra].lower() in vocales:
+                    resultado += str(frase[letra])
+            print(resultado)
+
+        elif opc == 2 and frase == "":
+            print("Primer has d'introduir la frase per utilitzar aquesta opció.\n")
+
+        elif opc == 4 and frase != "":
+            print(frase[-1:0:-1])
+
+        elif opc == 4 and frase == "":
+            print("Primer has d'introduir la frase per utilitzar aquesta opció.\n")
+
+
