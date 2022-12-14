@@ -7,4 +7,21 @@ while True:
     if not opc.isdigit() and not int(opc) in range(1,6):
         print("Opcio incorrecta\n")
     else:
+        resultado = ""
+        frase = ""
         opc = int(opc)
+        if opc == 3 and frase == "":
+            print("Primer has d'introduir la frase per poder utilitzar aquesta funció.")
+
+        elif opc == 3 and frase != "":
+            vocales = "aeiou"
+            for letra in frase:
+                if letra.lower() in vocales:
+                    resultado += letra
+            print(resultado)
+            print()
+
+        elif opc == 5:
+            for letra in frase:
+                print(letra + "\n")
+
